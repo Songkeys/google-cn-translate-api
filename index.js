@@ -112,8 +112,10 @@ function translate(text, opts) {
             e = new Error();
             if (err.statusCode !== undefined && err.statusCode !== 200) {
                 e.code = 'BAD_REQUEST';
+                e.message = err;
             } else {
                 e.code = 'BAD_NETWORK';
+                e.message = err;
             }
             throw e;
         });
