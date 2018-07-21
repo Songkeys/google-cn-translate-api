@@ -1,6 +1,6 @@
 {
   "name": "google-translate-api-china",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "A free and unlimited API for Google Translate for China region",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,6 @@
   "homepage": "https://github.com/songkeys/google-translate-api-china#readme",
   "dependencies": {
     "configstore": "^2.0.0",
-    "google-translate-token": "latest",
     "got": "^6.3.0",
     "safe-eval": "^0.3.0"
   },
