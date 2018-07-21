@@ -1,6 +1,6 @@
 {
   "name": "google-translate-api-china",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "A free and unlimited API for Google Translate for China region",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,7 @@
   "dependencies": {
     "configstore": "^2.0.0",
     "got": "^6.3.0",
+    "querystring": "^0.2.0",
     "safe-eval": "^0.3.0"
   },
   "devDependencies": {
