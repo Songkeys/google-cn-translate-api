@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/songkeys/google-translate-api-china#readme",
   "dependencies": {
-    "configstore": "^2.0.0",
+    "configstore": "^3.1.0",
     "got": "^6.3.0",
     "querystring": "^0.2.0",
     "safe-eval": "^0.3.0"
