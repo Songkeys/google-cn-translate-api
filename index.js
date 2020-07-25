@@ -6,7 +6,7 @@ var token = require('./token');
 
 var languages = require('./languages');
 
-function translate(text, opts) {
+function _translate(text, opts) {
     opts = opts || {};
 
     var e;
@@ -120,6 +120,22 @@ function translate(text, opts) {
             throw e;
         });
     });
+}
+
+async function translate(text, opts) {
+  if (text.length < 5000) {
+    return await transText(text, opts)
+  } else {
+    const chunkString = str => str.match(/(.|[\r\n]){1,5000}/g)
+    const chunks = chunkString(text)
+    const resArr = await Promise.all(chunks.map(c => _translate(c, opts)))
+    let res = JSON.parse(JSON.stringify(resArr[0]))
+    res.text = ''
+    resArr.forEach(el => {
+      res.text = res.text + el.text
+    })
+    return Promise.resolve(res)
+  }
 }
 
 module.exports = translate;
