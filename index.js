@@ -124,7 +124,7 @@ function _translate(text, opts) {
 
 async function translate(text, opts) {
   if (text.length < 5000) {
-    return await transText(text, opts)
+    return await _translate(text, opts)
   } else {
     const chunkString = str => str.match(/(.|[\r\n]){1,5000}/g)
     const chunks = chunkString(text)
